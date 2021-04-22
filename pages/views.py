@@ -1,7 +1,9 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
+from .models import Person
 
 # Create your views here.
-class HomePageView(TemplateView):
+class HomePageView(ListView):
+    model = Person
     template_name = 'index.html'
 
 class AboutPageView(TemplateView):
